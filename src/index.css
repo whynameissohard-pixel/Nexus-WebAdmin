@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+  --bg-color: #050508;
+  --panel-bg: rgba(10, 10, 15, 0.7);
+  --primary-neon: #b026ff;
+  --primary-neon-hover: #c457ff;
+  --secondary-cyan: #00f3ff;
+  --secondary-cyan-hover: #4dffff;
+  --text-main: #e0e0e0;
+  --text-muted: #888899;
+  --danger: #ff2a2a;
+  --success: #00ff88;
+  --border-neon: rgba(176, 38, 255, 0.5);
+  --border-cyan: rgba(0, 243, 255, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(176, 38, 255, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.05), transparent 25%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-neon);
+  box-shadow: 0 0 15px rgba(176, 38, 255, 0.1);
+}
+
+/* Buttons */
+.btn-neon {
+  background: transparent;
+  color: var(--primary-neon);
+  border: 1px solid var(--primary-neon);
+  padding: 10px 24px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(176, 38, 255, 0.2), inset 0 0 5px rgba(176, 38, 255, 0.1);
+}
+
+.btn-neon:hover {
+  background: var(--primary-neon);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(176, 38, 255, 0.6), inset 0 0 10px rgba(176, 38, 255, 0.4);
+}
+
+.btn-cyan {
+  background: transparent;
+  color: var(--secondary-cyan);
+  border: 1px solid var(--secondary-cyan);
+  padding: 10px 24px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 243, 255, 0.2), inset 0 0 5px rgba(0, 243, 255, 0.1);
+}
+
+.btn-cyan:hover {
+  background: var(--secondary-cyan);
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.6), inset 0 0 10px rgba(0, 243, 255, 0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a35; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-neon); 
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Typography Helpers */
+.text-cyan { color: var(--secondary-cyan); }
+.text-neon { color: var(--primary-neon); }
+.text-danger { color: var(--danger); }
+.text-success { color: var(--success); }
+.text-muted { color: var(--text-muted); }
+
+/* Glitch Effect Utility */
+.glitch-text {
+  position: relative;
+}
+.glitch-text::before, .glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(10px, 9999px, 83px, 0); }
+  20% { clip: rect(66px, 9999px, 4px, 0); }
+  40% { clip: rect(15px, 9999px, 84px, 0); }
+  60% { clip: rect(74px, 9999px, 73px, 0); }
+  80% { clip: rect(51px, 9999px, 20px, 0); }
+  100% { clip: rect(78px, 9999px, 99px, 0); }
+}
+@keyframes glitch-anim-2 {
+  0% { clip: rect(65px, 9999px, 100px, 0); }
+  20% { clip: rect(3px, 9999px, 87px, 0); }
+  40% { clip: rect(58px, 9999px, 45px, 0); }
+  60% { clip: rect(21px, 9999px, 80px, 0); }
+  80% { clip: rect(85px, 9999px, 63px, 0); }
+  100% { clip: rect(14px, 9999px, 3px, 0); }
+}
+
+/* Animations */
+@keyframes pulse-neon {
+  0% { box-shadow: 0 0 5px rgba(176, 38, 255, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(176, 38, 255, 0.5); }
+  100% { box-shadow: 0 0 5px rgba(176, 38, 255, 0.2); }
+}

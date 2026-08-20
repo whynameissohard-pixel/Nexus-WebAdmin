@@ -1,0 +1,94 @@
+.event-management-container {
+  padding: 2rem;
+  color: var(--text-primary);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.em-header {
+  margin-bottom: 2rem;
+}
+
+.em-header h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--primary-cyan);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.em-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.em-panel {
+  background: rgba(10, 15, 25, 0.7);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.em-panel h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent-purple);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.em-form-group {
+  margin-bottom: 1.2rem;
+}
+
+.em-form-group label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.em-input {
+  width: 100%;
+  background: rgba(0, 243, 255, 0.05);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.75rem;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.em-input:focus {
+  outline: none;
+  border-color: var(--primary-cyan);
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.em-btn {
+  width: 100%;
+  background: linear-gradient(45deg, rgba(0,243,255,0.2), rgba(0,255,157,0.2));
+  border: 1px solid var(--primary-cyan);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.em-btn:hover {
+  background: linear-gradient(45deg, rgba(0,243,255,0.4), rgba(0,255,157,0.4));
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}

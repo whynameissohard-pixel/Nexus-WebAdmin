@@ -1,0 +1,137 @@
+.sidebar {
+  width: 280px;
+  height: calc(100vh - 40px);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-cyan);
+}
+
+.sidebar-header h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.logo-icon {
+  filter: drop-shadow(0 0 8px var(--primary-neon));
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: var(--text-main);
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.nav-item:hover {
+  background: rgba(176, 38, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(176, 38, 255, 0.3);
+  text-shadow: 0 0 5px var(--primary-neon);
+}
+
+.nav-item.active {
+  background: rgba(0, 243, 255, 0.1);
+  color: var(--secondary-cyan);
+  border: 1px solid var(--secondary-cyan);
+  box-shadow: inset 0 0 10px rgba(0, 243, 255, 0.2);
+  text-shadow: 0 0 5px var(--secondary-cyan);
+}
+
+.nav-item.active svg {
+  color: var(--secondary-cyan);
+  filter: drop-shadow(0 0 5px var(--secondary-cyan));
+}
+
+.sidebar-footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--success);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--success);
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.pulse-dot {
+  box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+  animation: pulse-success 2s infinite;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 42, 42, 0.1);
+  box-shadow: 0 0 8px rgba(255, 42, 42, 0.4);
+}
+
+@keyframes pulse-success {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 255, 136, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+  }
+}
